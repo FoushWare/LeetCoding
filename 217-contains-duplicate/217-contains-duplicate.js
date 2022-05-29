@@ -3,16 +3,16 @@
  * @return {boolean}
  */
 var containsDuplicate = function (nums) {
-  // loop through the nums array [1,2,3,1]
-  for (let i = 0; i < nums.length-1; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-			//     for each element compare with the next ones
-      if (nums[i] === nums[j]) return true;
-    }
+  // create memory
+  const memory = {};
+  // loop through array
+  for (let i = 0; i < nums.length; i++) {
+    // if the value is in the memory return true
+    if (memory[nums[i]] === undefined) memory[nums[i]] = nums[i];
+    else return true;
   }
-  //     if equal return true if not return false
   return false;
 };
 
-// Time Complexity o(n^2)
-// space Complexity o(1)
+// Time Complexity O(N)
+// space Complexity O(N)
