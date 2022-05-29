@@ -3,13 +3,11 @@
  * @return {boolean}
  */
 var containsDuplicate = function (nums) {
-  // create memory
-  const memory = {};
-  // loop through array
+  // get meta data from the input array by sorting it
+  const sortedArray = nums.sort((a, b) => b - a);
+  // loop through the sortedArray
   for (let i = 0; i < nums.length; i++) {
-    // if the value is in the memory return true
-    if (memory[nums[i]] === undefined) memory[nums[i]] = nums[i];
-    else return true;
+    if (i > 0 && nums[i] === nums[i - 1]) return true;
   }
   return false;
 };
