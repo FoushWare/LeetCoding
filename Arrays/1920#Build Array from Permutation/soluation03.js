@@ -1,3 +1,5 @@
+// Problem URL: https://leetcode.com/problems/build-array-from-permutation/submissions/1090838009/
+
 // low space but hight time 
 // This solution utilizes the concept of encoding two values in a single element of the array, 
 // then decoding them to obtain the final result. 
